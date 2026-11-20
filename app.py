@@ -8,4 +8,5 @@ def get_user():
     name = request.args.get("name")
     conn = sqlite3.connect("demo.db")
     rows = conn.execute("SELECT * FROM users WHERE name = ?", (name,)).fetchall()
+    
     return {"rows": rows}
